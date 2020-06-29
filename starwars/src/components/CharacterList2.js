@@ -9,12 +9,12 @@ const Container = styled.div`
     flex-direction: horizontal;
     flex-wrap: wrap;
 `
-const CharacterList = props => {
+const CharacterList2 = props => {
     const [characters, setCharacters] = useState([]);
 
     useEffect (() => {
         axios
-            .get(`https://swapi.dev/api/people/`)
+            .get(`https://swapi.dev/api/people/?page=2/`)
             .then(res => {
                 console.log ("Res from useEffect of Character", res);
                 setCharacters(res.data.results);
@@ -45,4 +45,4 @@ const CharacterList = props => {
     );
 }
 
-export default CharacterList;
+export default CharacterList2;
